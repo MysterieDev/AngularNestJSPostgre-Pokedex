@@ -7,7 +7,12 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "serve": "node serve-script",
+    "compile:server": "webpack --config webpack.server.config.js --progress --colors",
+    "serve:ssr": "node dist/server",
+    "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
+    "build:client-and-server-bundles": "ng build --prod && ng run pokemon:server:production"
   },
   "private": true,
   "dependencies": {
@@ -18,9 +23,27 @@
     "@angular/forms": "~8.2.14",
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
+    "@angular/platform-server": "~8.2.14",
     "@angular/router": "~8.2.14",
+    "@nestjs/common": "^6.0.0",
+    "@nestjs/core": "^6.0.0",
+    "@nestjs/ng-universal": "^2.0.1",
+    "@nestjs/platform-express": "^6.0.0",
+    "@nestjs/testing": "^6.10.13",
+    "@nestjs/typeorm": "^6.2.0",
+    "@nestjsx/crud": "^4.4.1",
+    "@nestjsx/crud-typeorm": "^4.4.1",
+    "@nguniversal/express-engine": "^8.0.0",
+    "@nguniversal/module-map-ngfactory-loader": "^8.0.0",
+    "class-transformer": "^0.2.3",
+    "class-validator": "^0.11.0",
+    "dependencies": "0.0.1",
+    "nestjs": "0.0.1",
+    "pg": "^7.17.0",
+    "reflect-metadata": "^0.1.13",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
+    "typeorm": "^0.2.22",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
@@ -39,9 +62,14 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
+    "nodemon": "^1.18.11",
     "protractor": "~5.4.0",
+    "rimraf": "^2.6.3",
+    "ts-loader": "^5.2.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.5.3"
+    "typescript": "~3.5.3",
+    "wait-on": "^3.2.0",
+    "webpack-cli": "^3.1.0"
   }
 }
