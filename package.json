@@ -35,7 +35,7 @@
     "@nestjsx/crud-typeorm": "^4.4.1",
     "@nguniversal/express-engine": "^8.0.0",
     "@nguniversal/module-map-ngfactory-loader": "^8.0.0",
-    "class-transformer": "^0.2.3",
+    "class-transformer": "^0.3.1",
     "class-validator": "^0.11.0",
     "dependencies": "0.0.1",
     "nestjs": "0.0.1",
